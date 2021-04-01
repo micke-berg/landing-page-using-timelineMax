@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  cursor: url("/img/cursorLg.png"), auto;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #121211;
+  background: url("/img/hero.jpg") no-repeat 50% 50%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.pointer-none {
+  pointer-events: none;
+}
+
+/* Mouse follow rings ---------------- */
+.ball {
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 25%;
+  opacity: 0.7;
+  margin: -10px 0 0 -10px;
+  pointer-events: none;
+  filter: contrast(150%);
+}
+
+.ball:hover {
+  transform: scale(1.1);
+}
+
+.ball .ballOne {
+  left: 51.3%;
+  top: 50.2%;
+}
+
+.ballOne img {
+  animation: rotatingBall 2s linear infinite;
+}
+
+.ballTwo img {
+  animation: rotatingBall 8s linear infinite;
+}
+
+@keyframes rotatingBall {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ring image */
+img {
+  width: 100%;
+  -webkit-filter: grayscale();
+  filter: grayscale();
+}
+
+.logo {
+  position: fixed;
+  top: 1px;
+  margin-left: 2em;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 80px;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 39px;
+  left: 20px;
+  background: #6adb9b;
+  height: 2px;
+  width: 85%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in;
+}
+
+.logo:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.logo ion-icon {
+  position: relative;
+  margin-right: 7px;
+  color: #6adb9b;
+  z-index: 1;
+}
+
+/* Get in touch */
+.contact {
+  position: fixed;
+  top: 1px;
+  right: 100px;
+  color: rgb(124, 124, 124);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 80px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 39px;
+  height: 1px;
+  width: 100%;
+  background: #6adb9b;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in;
+}
+
+.contact:hover:before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.menu {
+  position: fixed;
+  top: 4px;
+  right: 2em;
+  color: #6adb9b;
+  line-height: 80px;
+  z-index: 1;
+}
+
+.menu ion-icon {
+  font-size: 24px;
+}
+
+.header {
+  position: absolute;
+  top: 48%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.ml7 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.5em;
+}
+
+.ml7 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0.2em 0 0.1em 0;
+  overflow: hidden;
+}
+
+.ml7 .letters {
+  transform-origin: 0% 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+
+h1 {
+  position: absolute;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 11px;
+  left: 0;
+  white-space: nowrap;
+  color: #808080;
+  outline: none;
+  /* -webkit-text-fill-color: #121212;
+  -webkit-text-stroke-color: #fff;
+  -webkit-text-stroke: 0.01px; */
+  width: 0;
+  height: 4px;
+  overflow: hidden;
+  transition: 0.7s;
+  z-index: 3;
+}
+
+h1:hover:before {
+  width: 100%;
+}
+
+#tagline {
+  width: 640px;
+}
+
+p {
+  color: #5f5f5f;
+  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* Portfolio button --------------------- */
+button {
+  margin-right: 10px;
+  padding: 14px 30px;
+  border: none;
+  color: #6adb9b;
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 300;
+}
+
+.btn-portfolio {
+  position: relative;
+}
+
+.btn-portfolio:hover img {
+  -webkit-transform: rotate(405deg);
+  transform: rotate(405deg);
+}
+
+.btn-portfolio img {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 16px;
+  left: 195px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  opacity: 0.5;
+}
+
+#one {
+  background: none;
+  border: 0.3px solid rgba(106, 219, 155, 0.3);
+}
+
+#one:hover {
+  border: 0.3px solid rgba(106, 219, 155, 0.9);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Social media links ---------------- */
+.media {
+  position: absolute;
+  top: 38%;
+  right: 6%;
+  z-index: 1;
+}
+
+.media ul {
+  position: absolute;
+  list-style: none;
+}
+
+.media ul li {
+  color: #808080;
+  padding: 12px 0;
+  display: inline-block;
+}
+
+.media ul li {
+  font-size: 20px;
+}
+
+.bottom-text {
+  position: absolute;
+  bottom: 40px;
+  margin-left: 2em;
+  color: #808080;
+  font-family: monospace;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 40px;
+  right: 0%;
+  color: #808080;
+  font-size: 15px;
+  font-family: monospace;
+  word-spacing: 0.1px;
+  font-weight: 100;
+  margin-right: 2em;
+  z-index: 1;
+}
+
+.loading-screen {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #0a0a0a;
+  z-index: 2;
+}
+
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 35%;
+  opacity: 0.7;
+}
+
+.ringOne img {
+  animation: rotatingRing 2s linear infinite;
+}
+
+.ringTwo img {
+  animation: rotatingRing 8s linear infinite;
+}
+
+@keyframes rotatingRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .loading-screen {
+    display: none;
+  }
+  .ring img {
+    display: none;
+  }
+  .header p,
+  button,
+  .media,
+  h1 {
+    display: none;
+  }
+}
